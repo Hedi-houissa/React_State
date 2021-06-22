@@ -6,12 +6,12 @@ import { Button } from "bootstrap-react";
 class App extends React.Component {
 
   state={
-    show : true
+    show : false 
   }
 
   handelcallShow = () => {
-    this.setState.show = false;
     console.log(this.state.show)
+    this.setState({show : !this.state.show});
     }
 
   render() {
@@ -20,7 +20,9 @@ class App extends React.Component {
       
       <div className="App">
           <Button onClick={this.handelcallShow}>SHOW</Button> 
-          <Person />
+          {this.state.show &&   <Person />
+
+          }
      
       </div>
     );
